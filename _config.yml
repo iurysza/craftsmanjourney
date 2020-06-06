@@ -117,7 +117,7 @@ footer-link-col: "#404040"
 # --- Comments --- #
 
 # To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
-disqus: "iury_souza"
+#disqus: "iury_souza"
 
 # To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
 #fb_comment_id: ""
@@ -179,7 +179,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
+      comments: false  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
       readtime: false # add estimated reading time on all blog posts
   -
@@ -196,6 +196,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
+  - theme_README.md
   - README.md
   - screenshot.png
   - docs/

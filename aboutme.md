@@ -1,16 +1,10 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: Opa, tudo bom?
+show-avatar: true
+subtitle: Glad you asked, kind stranger.  
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+I'm passionate about architecture and by building software that lasts. With over 7 years of experience working on projects of various kinds, from small companies to startups all the way to apps with millions of users. I've grown confident in building mobile applications from the ground up and I especially enjoy innovative and creative environments
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Reach me out on twitter or on my email, let's talk =)

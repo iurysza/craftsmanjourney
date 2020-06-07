@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Setting up MockServer"
+title:  Setting up MockServer
+subtitle: Speed up your tests
 date:   2020-04-21 11:53:02 -0300
-cover-img: setting-up-mockwebserver
+cover-img: "/assets/img/above_clouds.jpg"
 tags: docker testing
 comments: true
 
 ---
-# Setting up MockServer
 
 ## Main goals:
 

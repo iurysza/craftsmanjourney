@@ -1,7 +1,7 @@
 # --- Basic options --- #
 
 # Name of website
-title: A craftsman journey
+title: Thoughtbox
 
 # Short description of your site
 description: A virtual proof that I'm awesome
@@ -16,13 +16,13 @@ navbar-links:
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
-
 # --- Logo --- #
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/assets/img/me-avatar.jpg"
+favicon: "/favicon.ico"
+
 
 # By default, the image is cut into a circle. You can disable this behaviour here.
 round-avatar: true
@@ -180,6 +180,7 @@ defaults:
     values:
       layout: "post"
       comments: false  # add comments to all blog posts
+      show-avatar: false  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
       readtime: false # add estimated reading time on all blog posts
   -
@@ -187,7 +188,6 @@ defaults:
       path: "" # all files
     values:
       layout: "page"
-      show-avatar: true
 
 # Exclude these files from production site
 exclude:

@@ -10,8 +10,8 @@ comments: true
 ---
 
 Have you ever wondered how **twitter bots** work? :thinking:<br>
-Can we integrate it with **Telegram**? :thinking:<br>
-Is it possible to do it **only** with **Kotlin**? :open_mouth:<br>
+Can we integrate them with **Telegram**? :thinking:<br>
+Is it possible to do all this **only** with **Kotlin**? :open_mouth:<br>
 
 Fret not! Follow me while we uncover these mysteries!
 <br>
@@ -23,7 +23,7 @@ The idea here is pretty straight forward: A twitter bot that downloads videos fr
 {% include image.html
     src="/image-twitter-upm.png" 
     alt="Example in the wild"
-    caption="<b>@BaixaEssaPorra</b> is a popular downloader bot in brazilian twittersphere"
+    caption="<b>@BaixaEssaPorra</b> is a popular downloader bot in the brazilian twittersphere"
 %}
 
 <br>
@@ -32,7 +32,7 @@ The idea here is pretty straight forward: A twitter bot that downloads videos fr
 Now that we know what we want, how can we achieve this? 
 
 We'll have an application running locally on our machines that will somehow **listen to tweets that mention another user**. 
-After being notified of this event, we will need to **fetch the video URL, **download it** and finally **send it over to a telegram user** using the a bot.
+After being notified of this event, we will need to **fetch the video URL** from the tweet we're replying to, **download the video** and finally **send it over to a telegram user** using the a bot.
 
 After reading the [twitter developer docs](https://developer.twitter.com/en/docs) I've found they offer 3 possibilities:
 
@@ -51,7 +51,7 @@ Here's what I found:
 
 - There's an unofficial Java library for the Twitter API called [Twitter4j](http://twitter4j.org/en/) 
 - There's a Java HTTP client for consuming Twitter's realtime streaming API called  [HBC](https://github.com/twitter/hbc)
-- Theres a wrapper for the Telegram bot API written in Kotlin called [kotlin-telegram-bot](https://github.com/kotlin-telegram-bot/kotlin-telegram-bot)
+- There's a wrapper for the Telegram bot API written in Kotlin called [kotlin-telegram-bot](https://github.com/kotlin-telegram-bot/kotlin-telegram-bot)
 
 Sweet! The job just got a whole lot easier now that we don't need to build the HTTP clients for any of these. 
 
@@ -310,13 +310,13 @@ twitterClient.getStatusById(newStatus.inReplyToStatusId)
             ?.forEach { url -> println(url)}
 ```
 
-Almost there now! We just need to send the video to Telegram! But wait... if we send this url... we'll be sending just a url... not an actual video. We can do better!
+Almost there now! We just need to send the video to Telegram! But wait... if we send this url... we'll be sending just an url... not an actual video. We can do better!
 
 
 
 **Downloading the video**
 
-Since we're using the `kotlin-telegram-bot`, and it has transitive dependencies to [retrofit](https://github.com/square/retrofit) it seems like a good idea to use it to download the video file.
+Since we're using the `kotlin-telegram-bot`, and it has transitive dependencies to [retrofit](https://github.com/square/retrofit) it seems like a good idea to using it to download the video file.
 
 ```kotlin
 object FileDownloader {
@@ -354,7 +354,7 @@ After that we write the data to a file using `Okio` (also comes bundled with ret
 
 You can see that we're using coroutines to switch threads while it still looks like synchronous code.
 
-This was achieved with a simple extension function on `retrofit`'s  `Call`
+This was achieved with a simple extension function on `retrofit`'s  `Call`.
 
 ```kotlin
 suspend fun <T> Call<T>.await(): T {

@@ -352,9 +352,9 @@ After that we write the data to a file using `Okio` (also comes bundled with ret
 
 
 
-You can see there that we're using coroutines to switch threads while it still looks like synchronous code.
+You can see that we're using coroutines to switch threads while it still looks like synchronous code.
 
-This was achieved with a simple extension function on `retrofit's`  `Call`
+This was achieved with a simple extension function on `retrofit`'s  `Call`
 
 ```kotlin
 suspend fun <T> Call<T>.await(): T {
@@ -427,3 +427,5 @@ Taking advantage of these libraries make the experience a lot smoother and addin
 The next step here is to implement this idea using the the `WebHook API`, but this will have to be in a another post.
 
 I hope you learned something along the way, I certainly did!
+<br>
+You can check the project on [github](https://github.com/iurysza/twitter-telegram-bot)

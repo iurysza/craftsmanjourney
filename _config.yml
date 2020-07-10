@@ -167,6 +167,9 @@ paginate: 5
 
 kramdown:
   input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class: 'syntax'
 
 # Default YAML values (more information on Jekyll's site)
 defaults:

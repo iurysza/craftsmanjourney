@@ -19,7 +19,7 @@ navbar-links:
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/assets/img/me-avatar.jpg"
 favicon: "/favicon.ico"
-
+default-share-img: "/assets/img/kotlin_blurred.jpeg"
 
 # By default, the image is cut into a circle. You can disable this behaviour here.
 round-avatar: true

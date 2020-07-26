@@ -79,7 +79,7 @@
   {% if page.share-img %}
   <meta property="og:image" content="{{ page.share-img }}">
   {% elsif site.avatar %}
-  <meta property="og:image" content="{{ site.avatar | absolute_url }}">
+  <meta property="og:image" content="{{ site.default-share-img | absolute_url }}">
   {% endif %}
 
 
@@ -107,7 +107,7 @@
   {% if page.share-img %}
   <meta name="twitter:image" content="{{ page.share-img }}">
   {% elsif site.avatar %}
-  <meta name="twitter:image" content="{{ site.avatar | absolute_url }}">
+  <meta name="twitter:image" content="{{ site.default-share-img | absolute_url }}">
   {% endif %}
 
   {% if site.matomo %}

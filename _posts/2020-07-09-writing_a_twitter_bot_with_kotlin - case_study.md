@@ -4,7 +4,7 @@ title:  Sending videos from tweets to Telegram with a bot
 subtitle: Kotlin goes bots
 date:   2020-07-09 11:53:02 -0300
 cover-img: "/assets/img/twitter-telegram-header.jpg"
-tags: kotlin bot
+tags: kotlin bot 
 comments: true
 
 ---
@@ -416,16 +416,40 @@ fun main() {
 }
 ```
 <br>
+<br>
 
+{% highlight kotlin %}
+fun main() {
+    val authData = AuthLoader.getAuthDataFrom("auth_data.json")
+    val filterParams = FilterParams(listOf(authData.twitterUserId),listOf("@MandaProZap"))
 
+    val twitterClient = TwitterClient(authData)
+    val telegramBot = bot { token = authData.telegramToken }
+
+    FilteredStatusStream(authData, filterParams) { newStatus ->
+        twitterClient.getStatusById(newStatus.inReplyToStatusId)
+            ?.mediaEntities
+            ?.mapNotNull { it.videoVariants.firstOrNull()?.url }
+            ?.forEach { url ->
+                GlobalScope.launch {
+                    FileDownloader.downloadAndWriteToFile(url)?.let { videoFile ->
+                        telegramBot.sendVideo(authData.telegramUserId, videoFile)
+                    }
+                }
+            }
+    }.start()
+}
+{% endhighlight %}
+
+<br>
 ### **Summing it all up!**
 
 Yes, we can create a twitter-telegram bot with Kotlin while keeping it fairly simple. 
 
 Taking advantage of these libraries make the experience a lot smoother and adding some wrappers on top of it helps to hide the complexity and enable us to create a declarative API to let us focus on what matters.
 
-The next step here is to implement this idea using the the `WebHook API`, but this will have to be in a another post.
+The next step here is to implement this idea using the `WebHook API`, but this will have to be in a another post.
 
 I hope you learned something along the way, I certainly did!
 <br>
-You can check the project on [github](https://github.com/iurysza/twitter-telegram-bot)
+You can check the project on [github](https://github.com/iurysza/twitter-telegram-bot).

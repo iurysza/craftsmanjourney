@@ -2,12 +2,14 @@
 layout: post
 title:  Concise and type safe scripting with kotlin
 subtitle: Say goodbye to bash scripts
-date:   2020-07-25 17:00:00 -0300
+date:   2020-07-26 11:53:02 -0300
 cover-img: "/assets/img/kotlin_blurred.jpeg"
 tags: kotlin script automation
 comments: true
 
---
+---
+
+
 
 A kotlin script is a way to **compile** and **run** `Kotlin` code easily. 
 Scripts are a powerful tool when you want to automate any kind of work. The most used languages for scripting tend to be `python` 
